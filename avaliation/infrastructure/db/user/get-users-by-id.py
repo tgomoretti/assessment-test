@@ -1,4 +1,4 @@
-from ...connection import connect_db
+from ..connection import connect_db
 
 def get_user_by_id(user_id):
     conn = connect_db()
