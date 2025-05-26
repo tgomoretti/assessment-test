@@ -14,7 +14,7 @@ def connect_db():
     conn = psycopg2.connect(**DB_CONFIG)
     return conn
 
-def insert_user(user_data):
+def create_user(user_data):
     conn = connect_db()
     cur = conn.cursor()
     query = sql.SQL("""
@@ -55,5 +55,5 @@ if __name__ == "__main__":
         "responsible_analyst": "Analista Y",
         "responsible_manager": "Gestor Z"
     }
-    user_id = insert_user(new_user)
+    user_id = create_user(new_user)
     print(f"Usuário inserido com id: {user_id}")
