@@ -1,4 +1,4 @@
-from avaliation.infrastructure.db.connection import connect_db
+from ..connection import connect_db
 
 def get_all_users():
     conn = connect_db()
