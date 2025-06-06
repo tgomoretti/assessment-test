@@ -1,18 +1,19 @@
 import psycopg2
 from psycopg2 import sql
+from avaliation.infrastructure.db.connection import connect_db
 
-# Configurações do banco
-DB_CONFIG = {
-    "host": "localhost",
-    "port": 5432,
-    "database": "avaliacao",
-    "user": "tiago",
-    "password": "admin"
-}
+# # Configurações do banco
+# DB_CONFIG = {
+#     "host": "localhost",
+#     "port": 5432,
+#     "database": "avaliacao",
+#     "user": "tiago",
+#     "password": "admin"
+# }
 
-def connect_db():
-    conn = psycopg2.connect(**DB_CONFIG)
-    return conn
+# def connect_db():
+#     conn = psycopg2.connect(**DB_CONFIG)
+#     return conn
 
 def create_user(user_data):
     conn = connect_db()
