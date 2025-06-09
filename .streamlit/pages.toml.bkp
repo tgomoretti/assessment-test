@@ -1,0 +1,14 @@
+[[pages]]
+path = "pages/create_department_form.py"
+name = "🏢 Cadastro de Departamentos"
+icon = "building"
+
+[[pages]]
+path = "pages/create_question_form.py"
+name = "❓ Cadastro de Questões"
+icon = "question"
+
+[[pages]]
+path = "pages/edit_question_form.py"
+name = "✏️ Edição de Questões"
+icon = "pencil"

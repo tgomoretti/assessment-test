@@ -4,7 +4,19 @@ def get_all_users():
     conn = connect_db()
     cur = conn.cursor()
 
-    query = "SELECT * FROM users ORDER BY id DESC;"
+    query = """
+        SELECT id, 
+               name, 
+               phone,
+               email,
+               health_unit,
+               municipality,
+               responsible_analyst,
+               responsible_manager,
+               id_department
+        FROM users
+        ORDER BY id DESC;
+    """
     cur.execute(query)
     results = cur.fetchall()
 
@@ -19,6 +31,7 @@ def get_all_users():
         "health_unit",
         "municipality",
         "responsible_analyst",
-        "responsible_manager"
-        ]
+        "responsible_manager",
+        "id_department"
+    ]
     return [dict(zip(keys, row)) for row in results]

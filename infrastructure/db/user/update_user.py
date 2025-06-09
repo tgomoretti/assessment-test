@@ -11,7 +11,8 @@ def update_user(user_id, user_data):
                     health_unit = %s,
                     municipality = %s,
                     responsible_analyst = %s,
-                    responsible_manager = %s
+                    responsible_manager = %s,
+                    id_department = %s
                 WHERE id = %s;
                 """
                 
@@ -23,6 +24,7 @@ def update_user(user_id, user_data):
         user_data.get('municipality'),
         user_data.get('responsible_analyst'),
         user_data.get('responsible_manager'),
+        user_data.get('id_department'),
      user_id 
     ))
     

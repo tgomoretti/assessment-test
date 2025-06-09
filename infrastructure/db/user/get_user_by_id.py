@@ -12,7 +12,8 @@ def get_user_by_id(user_id):
         health_unit,
         municipality,
         responsible_analyst,
-        responsible_manager
+        responsible_manager,
+        "id_department"
         FROM users
         WHERE id = %s;
     """
@@ -31,7 +32,8 @@ def get_user_by_id(user_id):
             "health_unit",
             "municipality",
             "responsible_analyst",
-            "responsible_manager"
+            "responsible_manager",
+            "id_department"
             ]
         
         return dict(zip(keys, result))

@@ -1,3 +1,9 @@
+# export HOME="/c/Users/tiago"
+
+#Rodar streamlit
+# PYTHONPATH=. streamlit run avaliation/interface/pages/user_form.py
+
+
 import streamlit as st
 
 st.title("Avaliação de Capacitação")
