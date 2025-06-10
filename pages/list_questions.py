@@ -19,6 +19,7 @@ if selected_key:
     else:
         st.subheader("Questões cadastradas:")
         for q in questions:
+            question_id = q[0]
             st.markdown(f"""
             **ID:** {q[0]}  
             **Pergunta:** {q[1]}  
@@ -27,5 +28,10 @@ if selected_key:
             - C: {q[4]}  
             - D: {q[5]}  
             **Correta:** {q[6]}  
-            ---
             """)
+
+            if st.button(f"Editar questão {question_id}"):
+                st.session_state.edit_question_id = question_id
+                st.switch_page("pages/edit_question_form.py")
+
+            st.markdown("---")
