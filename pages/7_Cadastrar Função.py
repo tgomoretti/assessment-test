@@ -1,7 +1,9 @@
 import streamlit as st
 from avaliation.infrastructure.db.departments.create_department import create_department
 
-st.title("Cadastro de Departamento")
+st.set_page_config(page_title="Cadastro de Departamento", page_icon=":building")
+
+# st.title("Cadastro de Departamento")
 
 with st.form("department_form"):
     department_name = st.text_input("Nome do Departamento *")

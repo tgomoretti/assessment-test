@@ -32,6 +32,6 @@ if selected_key:
 
             if st.button(f"Editar questão {question_id}"):
                 st.session_state.edit_question_id = question_id
-                st.switch_page("pages/edit_question_form.py")
+                st.switch_page("pages/5_Editar questão.py")
 
             st.markdown("---")

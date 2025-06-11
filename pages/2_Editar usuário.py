@@ -3,6 +3,9 @@ from avaliation.infrastructure.db.user.get_user_by_id import get_user_by_id
 from avaliation.infrastructure.db.user.update_user import update_user
 from avaliation.infrastructure.db.departments.get_departments import get_departments
 
+st.set_page_config(page_title="Cadastrar Usuário", layout="wide")
+st.title("Cadastro de Usuário")
+
 if 'edit_user_id' not in st.session_state:
     st.warning("Por favor, escolha um usuário para editar.")
     st.stop()
@@ -14,8 +17,6 @@ if not user:
     st.error("Usuário nao encontrado.")
     st.stop()
     
-
-
 with st.form("edit_user_form"):
     name = st.text_input("Nome completo", user['name'])
     phone = st.text_input("Telefone", user['phone'])
@@ -29,7 +30,7 @@ with st.form("edit_user_form"):
     submitted = st.form_submit_button("Atualizar")
     
 departments = get_departments()
-dept_dict = {d['name']: d['id'] for d in departments}
+dept_dict = {name: id for id, name in departments} 
 
 current_dept = next((name for name, id_ in dept_dict.items() if id_ == user['id_department']), None)
 selected_department = st.selectbox("Departamento", options=list(dept_dict.keys()), index=list(dept_dict.keys()).index(current_dept))

@@ -9,4 +9,6 @@ for user in users:
     st.write(f"**{user['name']}** - {user['email']}")
     if st.button(f"Editar {user['id']}"):
         st.session_state.edit_user_id = user['id']
-        st.switch_page("pages/edit_user_form.py")
+        st.switch_page("pages/2_Editar usuário.py")
+        
+st.markdown("---")
